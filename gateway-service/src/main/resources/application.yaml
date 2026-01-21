@@ -6,12 +6,21 @@ spring:
     name: gateway-service
   cloud:
     gateway:
-      server:
-        webflux:
-          discovery:
-            locator:
-              enabled: true
-              lower-case-service-id: true
+      routes:
+        - id: auth-service
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/auth/**
+
+        - id: quiz-service
+          uri: lb://QUIZ-SERVICE
+          predicates:
+            - Path=/quiz/**
+
+        - id: attempt-service
+          uri: lb://ATTEMPT-SERVICE
+          predicates:
+            - Path=/attempt/**
 
 eureka:
   client:

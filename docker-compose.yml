@@ -1,14 +1,14 @@
-version: "3.9"
-
 services:
   postgres:
     image: postgres:16
-    container_name: quiz-postgres
+    container_name: postgres-db
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-    ports:
-      - "5432:5432"
+      POSTGRES_DB: quizdb
     volumes:
       - pgdata:/var/lib/postgresql/data
 
