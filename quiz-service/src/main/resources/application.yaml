@@ -8,10 +8,13 @@ spring:
     url: jdbc:postgresql://localhost:5432/quizdb
     username: postgres
     password: postgres
-    jpa:
+  jpa:
+    properties:
       hibernate:
-        ddl-auto: update
-      show-sql: true
+        default_schema: quiz_schema
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 
 eureka:
   client:
