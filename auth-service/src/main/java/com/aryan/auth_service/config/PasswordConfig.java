@@ -1,4 +1,4 @@
-package com.aryan.auth_service.security;
+package com.aryan.auth_service.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

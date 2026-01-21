@@ -1,4 +1,4 @@
-package com.aryan.auth_service.security;
+package com.aryan.auth_service.service;
 
 import com.aryan.auth_service.entity.User;
 import io.jsonwebtoken.Claims;

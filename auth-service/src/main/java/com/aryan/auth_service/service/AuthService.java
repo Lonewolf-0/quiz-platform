@@ -5,7 +5,6 @@ import com.aryan.auth_service.dto.RegisterRequest;
 import com.aryan.auth_service.entity.Role;
 import com.aryan.auth_service.entity.User;
 import com.aryan.auth_service.repository.UserRepository;
-import com.aryan.auth_service.security.JwtService;
 import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
