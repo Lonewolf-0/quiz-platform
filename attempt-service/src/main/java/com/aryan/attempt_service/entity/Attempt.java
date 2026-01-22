@@ -24,6 +24,7 @@ public class Attempt {
 
     private int score;
     private int totalQuestions;
+    @Builder.Default
     private Instant submittedAt = Instant.now();
 
 }
