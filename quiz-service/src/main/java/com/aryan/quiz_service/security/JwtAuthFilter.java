@@ -1,6 +1,6 @@
-package com.aryan.auth_service.security;
+package com.aryan.quiz_service.security;
 
-import com.aryan.auth_service.service.JwtService;
+
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
