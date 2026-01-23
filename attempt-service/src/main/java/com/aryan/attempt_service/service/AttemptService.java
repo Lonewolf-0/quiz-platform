@@ -1,6 +1,7 @@
 package com.aryan.attempt_service.service;
 
 
+import com.aryan.attempt_service.dto.AttemptHistoryResponse;
 import com.aryan.attempt_service.dto.AttemptResponse;
 import com.aryan.attempt_service.dto.SubmitAttemptRequest;
 import com.aryan.attempt_service.entity.Attempt;
@@ -14,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -96,6 +98,31 @@ public class AttemptService {
                 attempt.getQuizId(),
                 attempt.getScore(),
                 attempt.getTotalQuestions()
+        );
+    }
+
+    public List<AttemptHistoryResponse> getAllAttempts(UUID userId) {
+        return repository.findByUserId(userId).stream()
+                .map(this::mapToResponse)
+                .toList();
+    }
+
+    public List<AttemptHistoryResponse> getAttemptsByQuiz(
+            UUID userId,
+            UUID quizId
+    ) {
+        return repository.findByUserIdAndQuizId(userId, quizId).stream()
+                .map(this::mapToResponse)
+                .toList();
+    }
+
+    private AttemptHistoryResponse mapToResponse(Attempt attempt) {
+        return new AttemptHistoryResponse(
+                attempt.getId(),
+                attempt.getQuizId(),
+                attempt.getScore(),
+                attempt.getTotalQuestions(),
+                attempt.getSubmittedAt()
         );
     }
 

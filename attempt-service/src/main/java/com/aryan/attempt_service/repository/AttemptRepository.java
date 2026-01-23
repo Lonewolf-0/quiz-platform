@@ -8,4 +8,6 @@ import java.util.UUID;
 
 public interface AttemptRepository extends JpaRepository<Attempt, UUID> {
     List<Attempt> findByUserId(UUID userId);
+    List<Attempt> findByUserIdAndQuizId(UUID userId, UUID quizId);
+
 }
