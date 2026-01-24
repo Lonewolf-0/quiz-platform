@@ -20,13 +20,13 @@ public class InternalQuizController {
     }
 
     @GetMapping("/{quizId}/answers")
-    public Map<UUID, String> getCorrectAnswers(
+    public Map<String, String> getCorrectAnswers(
             @PathVariable UUID quizId
     ) {
         return questionRepository.findByQuizId(quizId)
                 .stream()
                 .collect(Collectors.toMap(
-                        Question::getId,
+                        q -> q.getId().toString(),
                         q -> (String) q.getContent().get("correctAnswer")
                 ));
     }

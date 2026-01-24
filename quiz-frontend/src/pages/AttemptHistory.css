@@ -1,0 +1,243 @@
+.history-page {
+    min-height: calc(100vh - 70px);
+    background: #f8f9ff;
+    padding: 40px 20px;
+}
+
+.history-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.history-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.history-header h1 {
+    font-size: 2.5rem;
+    color: #1a1a2e;
+    margin-bottom: 10px;
+}
+
+.history-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Table Container */
+.history-table-container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.history-table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.history-table th {
+    padding: 18px 15px;
+    text-align: left;
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.history-table tbody tr {
+    border-bottom: 1px solid #eee;
+    transition: background 0.3s ease;
+}
+
+.history-table tbody tr:hover {
+    background: #f8f9ff;
+}
+
+.history-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.history-table td {
+    padding: 16px 15px;
+    color: #333;
+}
+
+.quiz-id {
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: #666;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.score {
+    font-weight: 600;
+    color: #1a1a2e;
+}
+
+.percentage {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.status {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.status.passed {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.status.failed {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* No Attempts */
+.no-attempts {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.no-attempts-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.no-attempts h2 {
+    color: #1a1a2e;
+    margin-bottom: 10px;
+}
+
+.no-attempts p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.start-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.start-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Stats Section */
+.stats-section {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.stats-section h2 {
+    font-size: 1.5rem;
+    color: #1a1a2e;
+    margin-bottom: 20px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.stat-card {
+    background: #f8f9ff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #667eea;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Loading & Error */
+.loading-container,
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    gap: 20px;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #e0e0e0;
+    border-top-color: #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.retry-btn {
+    padding: 12px 24px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .history-header h1 {
+        font-size: 2rem;
+    }
+
+    .history-table-container {
+        overflow-x: auto;
+    }
+
+    .history-table {
+        min-width: 600px;
+    }
+}

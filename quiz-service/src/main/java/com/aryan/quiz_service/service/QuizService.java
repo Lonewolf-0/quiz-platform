@@ -1,6 +1,7 @@
 package com.aryan.quiz_service.service;
 
 import com.aryan.quiz_service.dto.CreateQuizRequest;
+import com.aryan.quiz_service.dto.QuizListResponse;
 import com.aryan.quiz_service.dto.QuizResponse;
 import com.aryan.quiz_service.entity.Question;
 import com.aryan.quiz_service.entity.Quiz;
@@ -43,8 +44,16 @@ public class QuizService {
 
     }
 
-    public List<Quiz> getAllQuizzes(){
-        return quizRepo.findAll();
+    public List<QuizListResponse> getAllQuizzes(){
+        return quizRepo.findAll().stream()
+                .map(quiz -> new QuizListResponse(
+                        quiz.getId(),
+                        quiz.getTitle(),
+                        quiz.getDescription(),
+                        quiz.getDurationMinutes(),
+                        questionRepo.countByQuizId(quiz.getId())
+                ))
+                .toList();
     }
 
     public QuizResponse getQuizById(UUID quizId){
@@ -55,6 +64,7 @@ public class QuizService {
                 .map(q -> {
                     Map<String, Object> map = new HashMap<>(q.getContent());
                     map.remove("correctAnswer");
+                    map.put("id", q.getId().toString()); // Include question ID
                     return map;
                 }).toList();
 

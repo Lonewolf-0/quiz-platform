@@ -4,5 +4,5 @@ import java.util.Map;
 import java.util.UUID;
 
 public record SubmitAttemptRequest(UUID quizId,
-                                   Map<UUID, String> answers) {
+                                   Map<String, String> answers) {
 }

@@ -69,19 +69,18 @@ public class AttemptService {
         logger.info("User answers: {}", request.answers());
 
         int score = 0;
-        for (UUID qId : request.answers().keySet()) {
-            String userAnswer = request.answers().get(qId);
-            String qIdString = qId.toString();
-            String correctAnswer = correctAnswers.get(qIdString);
+        for (String qKey : request.answers().keySet()) {
+            String userAnswer = request.answers().get(qKey);
+            String correctAnswer = correctAnswers.get(qKey);
 
-            logger.info("Comparing question {}: user answer='{}' vs correct answer='{}' (from key: {})",
-                    qId, userAnswer, correctAnswer, qIdString);
+            logger.info("Comparing question {}: user answer='{}' vs correct answer='{}'",
+                    qKey, userAnswer, correctAnswer);
 
             if (userAnswer != null && correctAnswer != null && userAnswer.equalsIgnoreCase(correctAnswer)) {
                 score++;
-                logger.info("Question {} is CORRECT", qId);
+                logger.info("Question {} is CORRECT", qKey);
             } else {
-                logger.info("Question {} is INCORRECT (user: '{}', correct: '{}')", qId, userAnswer, correctAnswer);
+                logger.info("Question {} is INCORRECT (user: '{}', correct: '{}')", qKey, userAnswer, correctAnswer);
             }
         }
 
@@ -97,7 +96,8 @@ public class AttemptService {
         return new AttemptResponse(
                 attempt.getQuizId(),
                 attempt.getScore(),
-                attempt.getTotalQuestions()
+                attempt.getTotalQuestions(),
+                correctAnswers
         );
     }
 

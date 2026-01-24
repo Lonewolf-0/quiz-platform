@@ -31,21 +31,27 @@ public class JwtAuthFilter extends OncePerRequestFilter {
     ) throws ServletException, IOException {
 
         String header = request.getHeader("Authorization");
+        System.out.println("Authorization header: " + header);
 
         if (header != null && header.startsWith("Bearer ")) {
             String token = header.substring(7);
 
-            Claims claims = jwtService.parseToken(token);
-            String role = claims.get("role", String.class);
+            try {
+                Claims claims = jwtService.parseToken(token);
+                String role = claims.get("role", String.class);
+                System.out.println("JWT parsed successfully. Subject: " + claims.getSubject() + ", Role: " + role);
 
-            UsernamePasswordAuthenticationToken auth =
-                    new UsernamePasswordAuthenticationToken(
-                            claims.getSubject(),
-                            null,
-                            List.of(new SimpleGrantedAuthority("ROLE_" + role))
-                    );
+                UsernamePasswordAuthenticationToken auth =
+                        new UsernamePasswordAuthenticationToken(
+                                claims.getSubject(),
+                                null,
+                                List.of(new SimpleGrantedAuthority("ROLE_" + role))
+                        );
 
-            SecurityContextHolder.getContext().setAuthentication(auth);
+                SecurityContextHolder.getContext().setAuthentication(auth);
+            } catch (Exception e) {
+                System.out.println("JWT parsing failed: " + e.getMessage());
+            }
         }
 
         filterChain.doFilter(request, response);

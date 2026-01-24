@@ -1,8 +1,8 @@
 package com.aryan.quiz_service.controller;
 
 import com.aryan.quiz_service.dto.CreateQuizRequest;
+import com.aryan.quiz_service.dto.QuizListResponse;
 import com.aryan.quiz_service.dto.QuizResponse;
-import com.aryan.quiz_service.entity.Quiz;
 import com.aryan.quiz_service.service.QuizService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -29,7 +29,7 @@ public class QuizController {
     }
 
     @GetMapping
-    public List<Quiz> getAll() {
+    public List<QuizListResponse> getAll() {
         return service.getAllQuizzes();
     }
 
