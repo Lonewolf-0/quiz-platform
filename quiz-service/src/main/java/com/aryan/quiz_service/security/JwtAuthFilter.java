@@ -33,7 +33,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             FilterChain filterChain
     ) throws ServletException, IOException {
 
-        log.info("JWT FILTER HIT: {}", request.getRequestURI());
+        log.debug("JWT FILTER HIT: {}", request.getRequestURI());
 
         String header = request.getHeader("Authorization");
 

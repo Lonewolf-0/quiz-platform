@@ -3,7 +3,6 @@ package com.aryan.quiz_service;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-
 @Slf4j
 public class LoggingBenchmarkTest {
 
@@ -34,7 +33,7 @@ public class LoggingBenchmarkTest {
         // Benchmark Logger
         long startLogger = System.nanoTime();
         for (int i = 0; i < iterations; i++) {
-            log.info("JWT FILTER HIT: /benchmark/path/to/resource " + i);
+            log.info("JWT FILTER HIT: /benchmark/path/to/resource {}", i);
         }
         long endLogger = System.nanoTime();
         long durationLogger = endLogger - startLogger;

@@ -7,6 +7,7 @@ import com.aryan.quiz_service.entity.Question;
 import com.aryan.quiz_service.entity.Quiz;
 import com.aryan.quiz_service.repository.QuestionRepository;
 import com.aryan.quiz_service.repository.QuizRepository;
+import com.aryan.quiz_service.exception.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -58,7 +59,7 @@ public class QuizService {
 
     public QuizResponse getQuizById(UUID quizId){
         Quiz quiz = quizRepo.findById(quizId)
-                .orElseThrow(()->new RuntimeException("Quiz not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Quiz not found with id: " + quizId));
 
         List<Map<String, Object>> questions = questionRepo.findByQuizId(quizId).stream()
                 .map(q -> {
