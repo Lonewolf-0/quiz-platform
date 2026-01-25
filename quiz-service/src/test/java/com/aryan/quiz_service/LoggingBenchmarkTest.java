@@ -1,6 +1,7 @@
 package com.aryan.quiz_service;
 
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,7 +12,13 @@ import java.io.PrintStream;
 @Slf4j
 public class LoggingBenchmarkTest {
 
+    /**
+     * Performance benchmark test for comparing System.out.println vs Logger.info.
+     * This test is disabled to prevent it from running during regular test execution.
+     * Enable this test manually when you need to verify logging performance.
+     */
     @Test
+    @Disabled("Performance benchmark - not meant for regular test execution")
     public void benchmarkLogging() {
         int iterations = 10000;
 
