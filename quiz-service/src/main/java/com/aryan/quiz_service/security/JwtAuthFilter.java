@@ -14,8 +14,10 @@ import io.jsonwebtoken.Claims;
 
 import java.io.IOException;
 import java.util.List;
+import lombok.extern.slf4j.Slf4j;
 
 @Component
+@Slf4j
 public class JwtAuthFilter extends OncePerRequestFilter {
 
     private final JwtService jwtService;
@@ -31,7 +33,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             FilterChain filterChain
     ) throws ServletException, IOException {
 
-        System.out.println("JWT FILTER HIT: " + request.getRequestURI());
+        log.info("JWT FILTER HIT: {}", request.getRequestURI());
 
         String header = request.getHeader("Authorization");
 
