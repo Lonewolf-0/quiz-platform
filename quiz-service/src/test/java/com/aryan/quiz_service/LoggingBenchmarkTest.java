@@ -18,7 +18,7 @@ public class LoggingBenchmarkTest {
         // Warmup
         for (int i = 0; i < 1000; i++) {
             System.out.println("Warmup " + i);
-            log.info("Warmup " + i);
+            log.info("Warmup {}", i);
         }
 
         // Benchmark System.out.println
