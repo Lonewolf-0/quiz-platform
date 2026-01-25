@@ -16,7 +16,18 @@ This is a full-stack Quiz Platform with:
 
 ## 🚀 Quick Start (5 Minutes)
 
-### Start Frontend
+### Option 1: Using Docker Compose (Recommended)
+
+```bash
+cd quiz-platform
+docker-compose up -d
+```
+
+This will start all backend services automatically.
+
+### Option 2: Start Services Manually
+
+#### Start Frontend
 
 ```bash
 cd quiz-platform/quiz-frontend
@@ -24,9 +35,7 @@ npm install
 npm run dev
 ```
 
-Access at: **http://localhost:5173**
-
-### Start Backend Services
+#### Start Backend Services
 
 ```bash
 # Terminal 1 - Auth Service
@@ -50,7 +59,14 @@ cd quiz-platform/gateway-service
 mvn spring-boot:run
 ```
 
-All services run on **http://localhost:8080**
+### 🌐 Open in Browser
+
+| Service  | URL                                            |
+|----------|------------------------------------------------|
+| Frontend | [http://localhost:5173](http://localhost:5173) |
+| Backend  | [http://localhost:8080](http://localhost:8080) |
+
+> 💡 **Tip:** All backend services are accessible via the Gateway at port 8080.
 
 ---
 
@@ -452,5 +468,5 @@ Once everything is running and you can:
 
 ---
 
-**Last Updated**: January 23, 2026
-**Version**: 1.0.0
+**Last Updated**: January 25, 2026
+**Version**: 1.0.1
