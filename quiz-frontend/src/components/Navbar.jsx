@@ -4,7 +4,7 @@ import {useAuth} from '../context/AuthContext';
 import './Navbar.css';
 
 const Navbar = () => {
-    const {isAuthenticated, user, logout} = useAuth();
+    const {isAuthenticated, isAdmin, email, role, logout} = useAuth();
     const navigate = useNavigate();
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -47,13 +47,24 @@ const Navbar = () => {
                                     Quizzes
                                 </Link>
                             </li>
+                            {isAdmin && (
+                                <li className="navbar-item">
+                                    <Link to="/admin/create-quiz" className="navbar-link admin-link"
+                                          onClick={closeMenu}>
+                                        Create Quiz
+                                    </Link>
+                                </li>
+                            )}
                             <li className="navbar-item">
                                 <Link to="/history" className="navbar-link" onClick={closeMenu}>
                                     History
                                 </Link>
                             </li>
                             <li className="navbar-item navbar-user">
-                                <span className="user-email">{user?.email || 'User'}</span>
+                                <span className={`role-badge ${isAdmin ? 'admin-badge' : 'user-badge'}`}>
+                                    {isAdmin ? 'Admin' : 'User'}
+                                </span>
+                                {email && <span className="user-email">{email}</span>}
                             </li>
                             <li className="navbar-item">
                                 <button className="navbar-btn logout-btn" onClick={handleLogout}>

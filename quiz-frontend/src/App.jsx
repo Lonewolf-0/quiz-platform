@@ -1,8 +1,9 @@
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import {AuthProvider} from './context/AuthContext';
 import Navbar from './components/Navbar';
 import ProtectedRoute from './components/ProtectedRoute';
 import PublicRoute from './components/PublicRoute';
+import AdminRoute from './components/AdminRoute';
 
 // Pages
 import Home from './pages/Home';
@@ -13,6 +14,7 @@ import Quiz from './pages/Quiz';
 import Result from './pages/Result';
 import AttemptHistory from './pages/AttemptHistory';
 import NotFound from './pages/NotFound';
+import CreateQuiz from './pages/CreateQuiz';
 
 import './App.css';
 
@@ -76,6 +78,16 @@ function App() {
                                     <ProtectedRoute>
                                         <AttemptHistory/>
                                     </ProtectedRoute>
+                                }
+                            />
+
+                            {/* Admin Routes */}
+                            <Route
+                                path="/admin/create-quiz"
+                                element={
+                                    <AdminRoute>
+                                        <CreateQuiz/>
+                                    </AdminRoute>
                                 }
                             />
 
