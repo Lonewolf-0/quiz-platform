@@ -13,8 +13,13 @@ import org.junit.jupiter.api.Test;
 @Slf4j
 public class LoggingBenchmarkTest {
 
-    @Disabled("Performance benchmark - not suitable for regular test execution")
+    /**
+     * Performance benchmark test for comparing System.out.println vs Logger.info.
+     * This test is disabled to prevent it from running during regular test execution.
+     * Enable this test manually when you need to verify logging performance.
+     */
     @Test
+    @Disabled("Performance benchmark - not meant for regular test execution")
     public void benchmarkLogging() {
         int iterations = 10000;
 
