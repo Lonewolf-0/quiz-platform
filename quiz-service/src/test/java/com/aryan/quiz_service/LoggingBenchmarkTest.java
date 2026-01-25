@@ -2,12 +2,6 @@ package com.aryan.quiz_service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-
 @Slf4j
 public class LoggingBenchmarkTest {
 
