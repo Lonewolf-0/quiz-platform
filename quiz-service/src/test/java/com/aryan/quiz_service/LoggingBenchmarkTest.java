@@ -1,10 +1,19 @@
 package com.aryan.quiz_service;
 
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+
+/**
+ * Performance benchmark test for comparing System.out.println vs Logger performance.
+ * This test is disabled by default as performance benchmarks should not run during regular test execution.
+ * To run this benchmark, remove the @Disabled annotation or run it explicitly via your IDE.
+ * For more accurate benchmarking, consider using a dedicated framework like JMH (Java Microbenchmark Harness).
+ */
 @Slf4j
 public class LoggingBenchmarkTest {
 
+    @Disabled("Performance benchmark - not suitable for regular test execution")
     @Test
     public void benchmarkLogging() {
         int iterations = 10000;
