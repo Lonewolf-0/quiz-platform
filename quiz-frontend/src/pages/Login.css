@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     padding: 40px 20px;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, #f5f5f5 0%, #bfc0c0 100%);
 }
 
 .login-container {
@@ -23,12 +23,12 @@
 
 .login-header h1 {
     font-size: 2rem;
-    color: #1a1a2e;
+    color: #2d3142;
     margin-bottom: 10px;
 }
 
 .login-header p {
-    color: #666;
+    color: #4f5d75;
 }
 
 .login-form {
@@ -45,7 +45,7 @@
 
 .form-group label {
     font-weight: 600;
-    color: #333;
+    color: #2d3142;
     font-size: 0.95rem;
 }
 
@@ -59,8 +59,8 @@
 
 .form-group input:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+    border-color: #ef8354;
+    box-shadow: 0 0 0 4px rgba(239, 131, 84, 0.1);
 }
 
 .form-group input:disabled {
@@ -79,7 +79,7 @@
 
 .login-btn {
     padding: 14px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #ef8354 0%, #e06b3c 100%);
     color: white;
     border: none;
     border-radius: 10px;
@@ -91,7 +91,7 @@
 
 .login-btn:hover:not(:disabled) {
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 10px 30px rgba(239, 131, 84, 0.4);
 }
 
 .login-btn:disabled {
@@ -107,11 +107,11 @@
 }
 
 .login-footer p {
-    color: #666;
+    color: #4f5d75;
 }
 
 .link {
-    color: #667eea;
+    color: #ef8354;
     text-decoration: none;
     font-weight: 600;
 }

@@ -26,7 +26,7 @@ const Navbar = () => {
         <nav className="navbar">
             <div className="navbar-container">
                 <Link to="/" className="navbar-logo" onClick={closeMenu}>
-                    🎯 Quiz Platform
+                    🎯 IntelliPrep
                 </Link>
 
                 <button className="navbar-toggle" onClick={toggleMenu}>

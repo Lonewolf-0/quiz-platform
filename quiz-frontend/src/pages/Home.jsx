@@ -11,7 +11,7 @@ const Home = () => {
                 <div className="hero-content">
                     <h1 className="hero-title">
                         Test Your Knowledge with
-                        <span className="highlight"> Quiz Platform</span>
+                        <span className="highlight"> IntelliPrep</span>
                     </h1>
                     <p className="hero-subtitle">
                         Challenge yourself with our interactive quizzes. Track your progress,

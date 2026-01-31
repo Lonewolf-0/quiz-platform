@@ -1,6 +1,6 @@
 .create-quiz-page {
     min-height: calc(100vh - 70px);
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #2d3142 0%, #4f5d75 100%);
     padding: 2rem;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .create-quiz-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #2d3142 0%, #4f5d75 100%);
     color: white;
     padding: 2rem;
     text-align: center;
@@ -48,7 +48,7 @@
 .form-section h2 {
     margin: 0 0 1.5rem;
     font-size: 1.25rem;
-    color: #333;
+    color: #2d3142;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -73,7 +73,7 @@
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
-    color: #444;
+    color: #2d3142;
     font-size: 0.9rem;
 }
 
@@ -92,8 +92,8 @@
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: #ef8354;
+    box-shadow: 0 0 0 3px rgba(239, 131, 84, 0.1);
 }
 
 .form-group textarea {
@@ -120,7 +120,7 @@
 .question-header h3 {
     margin: 0;
     font-size: 1.1rem;
-    color: #667eea;
+    color: #ef8354;
 }
 
 /* Options Section */
@@ -132,7 +132,7 @@
     display: block;
     margin-bottom: 0.75rem;
     font-weight: 600;
-    color: #444;
+    color: #2d3142;
     font-size: 0.9rem;
 }
 
@@ -147,7 +147,7 @@
     width: 20px;
     height: 20px;
     cursor: pointer;
-    accent-color: #667eea;
+    accent-color: #ef8354;
 }
 
 .option-input {
@@ -161,7 +161,7 @@
 
 .option-input:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: #ef8354;
 }
 
 .correct-badge {
@@ -175,7 +175,7 @@
 
 /* Buttons */
 .add-question-btn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #ef8354 0%, #e06b3c 100%);
     color: white;
     border: none;
     padding: 0.6rem 1.2rem;
@@ -188,7 +188,7 @@
 
 .add-question-btn:hover:not(:disabled) {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 4px 12px rgba(239, 131, 84, 0.4);
 }
 
 .remove-question-btn {
@@ -216,7 +216,7 @@
 }
 
 .cancel-btn {
-    background: #6c757d;
+    background: #4f5d75;
     color: white;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -228,7 +228,7 @@
 }
 
 .cancel-btn:hover:not(:disabled) {
-    background: #5a6268;
+    background: #2d3142;
 }
 
 .submit-btn {

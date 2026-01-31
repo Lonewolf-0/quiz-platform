@@ -13,14 +13,21 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    /* Color Palette */
+    --jet-black: #2d3142;
+    --blue-slate: #4f5d75;
+    --silver: #bfc0c0;
+    --white: #ffffff;
+    --coral-glow: #ef8354;
 }
 
 body {
     margin: 0;
     min-width: 320px;
     min-height: 100vh;
-    background-color: #ffffff;
-    color: #1a1a2e;
+    background-color: var(--white);
+    color: var(--jet-black);
 }
 
 #root {
@@ -47,14 +54,14 @@ img {
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: var(--silver);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #c1c1c1;
+    background: var(--blue-slate);
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #a1a1a1;
+    background: var(--jet-black);
 }
