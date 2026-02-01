@@ -172,26 +172,31 @@ const Quiz = () => {
                     <h2 className="question-text">{question.question}</h2>
 
                     <div className="options-list">
-                        {question.options.map((option, optIndex) => (
-                            <label
-                                key={`question-${currentQuestion}-option-${optIndex}`}
-                                className={`option-item ${
-                                    answers[question.id] === option ? 'selected' : ''
-                                }`}
-                            >
-                                <input
-                                    type="radio"
-                                    name={`question-${question.id}`}
-                                    value={option}
-                                    checked={answers[question.id] === option}
-                                    onChange={() => handleOptionSelect(question.id, option)}
-                                />
-                                <span className="option-letter">
-                  {String.fromCharCode(65 + optIndex)}
-                </span>
-                                <span className="option-text">{option}</span>
-                            </label>
-                        ))}
+                        {question.options.map((option, optIndex) => {
+                            // Handle both string options and object options {id, text}
+                            const optionValue = typeof option === 'object' ? option.text : option;
+                            const optionKey = typeof option === 'object' ? option.id : option;
+                            return (
+                                <label
+                                    key={`question-${currentQuestion}-option-${optIndex}`}
+                                    className={`option-item ${
+                                        answers[question.id] === optionValue ? 'selected' : ''
+                                    }`}
+                                >
+                                    <input
+                                        type="radio"
+                                        name={`question-${question.id}`}
+                                        value={optionValue}
+                                        checked={answers[question.id] === optionValue}
+                                        onChange={() => handleOptionSelect(question.id, optionValue)}
+                                    />
+                                    <span className="option-letter">
+                      {String.fromCharCode(65 + optIndex)}
+                    </span>
+                                    <span className="option-text">{optionValue}</span>
+                                </label>
+                            );
+                        })}
                     </div>
                 </div>
 

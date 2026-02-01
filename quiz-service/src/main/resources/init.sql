@@ -96,58 +96,33 @@ VALUES ('aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', 'Java Fundamentals',
 INSERT INTO quiz_schema.question (id, quiz_id, content)
 VALUES ('a1111111-1111-1111-1111-111111111111', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',
         '{
-            "text": "Which of the following is NOT a primitive data type in Java?",
-            "options": [
-                {"id": "opt1", "text": "int"},
-                {"id": "opt2", "text": "boolean"},
-                {"id": "opt3", "text": "String"},
-                {"id": "opt4", "text": "char"}
-            ],
-            "correctOptionId": "opt3"
+            "question": "Which of the following is NOT a primitive data type in Java?",
+            "options": ["int", "boolean", "String", "char"],
+            "correctAnswer": "String"
         }'::jsonb),
        ('a2222222-2222-2222-2222-222222222222', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',
         '{
-            "text": "What is the default value of a boolean variable in Java?",
-            "options": [
-                {"id": "opt1", "text": "true"},
-                {"id": "opt2", "text": "false"},
-                {"id": "opt3", "text": "null"},
-                {"id": "opt4", "text": "0"}
-            ],
-            "correctOptionId": "opt2"
+            "question": "What is the default value of a boolean variable in Java?",
+            "options": ["true", "false", "null", "0"],
+            "correctAnswer": "false"
         }'::jsonb),
        ('a3333333-3333-3333-3333-333333333333', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',
         '{
-            "text": "Which keyword is used to inherit a class in Java?",
-            "options": [
-                {"id": "opt1", "text": "implements"},
-                {"id": "opt2", "text": "extends"},
-                {"id": "opt3", "text": "inherits"},
-                {"id": "opt4", "text": "super"}
-            ],
-            "correctOptionId": "opt2"
+            "question": "Which keyword is used to inherit a class in Java?",
+            "options": ["implements", "extends", "inherits", "super"],
+            "correctAnswer": "extends"
         }'::jsonb),
        ('a4444444-4444-4444-4444-444444444444', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',
         '{
-            "text": "What is the output of System.out.println(10 + 20 + \"Hello\")?",
-            "options": [
-                {"id": "opt1", "text": "1020Hello"},
-                {"id": "opt2", "text": "30Hello"},
-                {"id": "opt3", "text": "Hello1020"},
-                {"id": "opt4", "text": "Hello30"}
-            ],
-            "correctOptionId": "opt2"
+            "question": "What is the output of System.out.println(10 + 20 + \"Hello\")?",
+            "options": ["1020Hello", "30Hello", "Hello1020", "Hello30"],
+            "correctAnswer": "30Hello"
         }'::jsonb),
        ('a5555555-5555-5555-5555-555555555555', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',
         '{
-            "text": "Which collection class allows null keys and null values?",
-            "options": [
-                {"id": "opt1", "text": "Hashtable"},
-                {"id": "opt2", "text": "TreeMap"},
-                {"id": "opt3", "text": "HashMap"},
-                {"id": "opt4", "text": "ConcurrentHashMap"}
-            ],
-            "correctOptionId": "opt3"
+            "question": "Which collection class allows null keys and null values?",
+            "options": ["Hashtable", "TreeMap", "HashMap", "ConcurrentHashMap"],
+            "correctAnswer": "HashMap"
         }'::jsonb) ON CONFLICT DO NOTHING;
 
 -- Quiz 2: Spring Boot Basics
@@ -160,58 +135,33 @@ VALUES ('bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb', 'Spring Boot Basics',
 INSERT INTO quiz_schema.question (id, quiz_id, content)
 VALUES ('b1111111-1111-1111-1111-111111111111', 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb',
         '{
-            "text": "Which annotation is used to mark a class as a Spring Boot main application?",
-            "options": [
-                {"id": "opt1", "text": "@SpringApplication"},
-                {"id": "opt2", "text": "@SpringBootApplication"},
-                {"id": "opt3", "text": "@EnableSpring"},
-                {"id": "opt4", "text": "@SpringMain"}
-            ],
-            "correctOptionId": "opt2"
+            "question": "Which annotation is used to mark a class as a Spring Boot main application?",
+            "options": ["@SpringApplication", "@SpringBootApplication", "@EnableSpring", "@SpringMain"],
+            "correctAnswer": "@SpringBootApplication"
         }'::jsonb),
        ('b2222222-2222-2222-2222-222222222222', 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb',
         '{
-            "text": "What is the default embedded server in Spring Boot?",
-            "options": [
-                {"id": "opt1", "text": "Jetty"},
-                {"id": "opt2", "text": "Undertow"},
-                {"id": "opt3", "text": "Tomcat"},
-                {"id": "opt4", "text": "GlassFish"}
-            ],
-            "correctOptionId": "opt3"
+            "question": "What is the default embedded server in Spring Boot?",
+            "options": ["Jetty", "Undertow", "Tomcat", "GlassFish"],
+            "correctAnswer": "Tomcat"
         }'::jsonb),
        ('b3333333-3333-3333-3333-333333333333', 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb',
         '{
-            "text": "Which annotation is used to inject dependencies in Spring?",
-            "options": [
-                {"id": "opt1", "text": "@Inject"},
-                {"id": "opt2", "text": "@Autowired"},
-                {"id": "opt3", "text": "@Resource"},
-                {"id": "opt4", "text": "All of the above"}
-            ],
-            "correctOptionId": "opt4"
+            "question": "Which annotation is used to inject dependencies in Spring?",
+            "options": ["@Inject", "@Autowired", "@Resource", "All of the above"],
+            "correctAnswer": "All of the above"
         }'::jsonb),
        ('b4444444-4444-4444-4444-444444444444', 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb',
         '{
-            "text": "Which HTTP method is typically used to update an existing resource?",
-            "options": [
-                {"id": "opt1", "text": "GET"},
-                {"id": "opt2", "text": "POST"},
-                {"id": "opt3", "text": "PUT"},
-                {"id": "opt4", "text": "DELETE"}
-            ],
-            "correctOptionId": "opt3"
+            "question": "Which HTTP method is typically used to update an existing resource?",
+            "options": ["GET", "POST", "PUT", "DELETE"],
+            "correctAnswer": "PUT"
         }'::jsonb),
        ('b5555555-5555-5555-5555-555555555555', 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb',
         '{
-            "text": "What annotation is used to map a method to an HTTP GET request?",
-            "options": [
-                {"id": "opt1", "text": "@Get"},
-                {"id": "opt2", "text": "@GetMapping"},
-                {"id": "opt3", "text": "@RequestMapping(GET)"},
-                {"id": "opt4", "text": "@HttpGet"}
-            ],
-            "correctOptionId": "opt2"
+            "question": "What annotation is used to map a method to an HTTP GET request?",
+            "options": ["@Get", "@GetMapping", "@RequestMapping(GET)", "@HttpGet"],
+            "correctAnswer": "@GetMapping"
         }'::jsonb) ON CONFLICT DO NOTHING;
 
 -- Quiz 3: React Fundamentals
@@ -224,58 +174,33 @@ VALUES ('cccccccc-cccc-cccc-cccc-cccccccccccc', 'React Fundamentals',
 INSERT INTO quiz_schema.question (id, quiz_id, content)
 VALUES ('c1111111-1111-1111-1111-111111111111', 'cccccccc-cccc-cccc-cccc-cccccccccccc',
         '{
-            "text": "What hook is used to manage state in a functional component?",
-            "options": [
-                {"id": "opt1", "text": "useEffect"},
-                {"id": "opt2", "text": "useState"},
-                {"id": "opt3", "text": "useContext"},
-                {"id": "opt4", "text": "useReducer"}
-            ],
-            "correctOptionId": "opt2"
+            "question": "What hook is used to manage state in a functional component?",
+            "options": ["useEffect", "useState", "useContext", "useReducer"],
+            "correctAnswer": "useState"
         }'::jsonb),
        ('c2222222-2222-2222-2222-222222222222', 'cccccccc-cccc-cccc-cccc-cccccccccccc',
         '{
-            "text": "Which method is used to render a React component to the DOM?",
-            "options": [
-                {"id": "opt1", "text": "ReactDOM.render()"},
-                {"id": "opt2", "text": "React.render()"},
-                {"id": "opt3", "text": "createRoot().render()"},
-                {"id": "opt4", "text": "Both A and C"}
-            ],
-            "correctOptionId": "opt4"
+            "question": "Which method is used to render a React component to the DOM?",
+            "options": ["ReactDOM.render()", "React.render()", "createRoot().render()", "Both A and C"],
+            "correctAnswer": "Both A and C"
         }'::jsonb),
        ('c3333333-3333-3333-3333-333333333333', 'cccccccc-cccc-cccc-cccc-cccccccccccc',
         '{
-            "text": "What is JSX?",
-            "options": [
-                {"id": "opt1", "text": "A JavaScript library"},
-                {"id": "opt2", "text": "A syntax extension for JavaScript"},
-                {"id": "opt3", "text": "A CSS framework"},
-                {"id": "opt4", "text": "A build tool"}
-            ],
-            "correctOptionId": "opt2"
+            "question": "What is JSX?",
+            "options": ["A JavaScript library", "A syntax extension for JavaScript", "A CSS framework", "A build tool"],
+            "correctAnswer": "A syntax extension for JavaScript"
         }'::jsonb),
        ('c4444444-4444-4444-4444-444444444444', 'cccccccc-cccc-cccc-cccc-cccccccccccc',
         '{
-            "text": "Which hook is used for side effects in React?",
-            "options": [
-                {"id": "opt1", "text": "useState"},
-                {"id": "opt2", "text": "useEffect"},
-                {"id": "opt3", "text": "useMemo"},
-                {"id": "opt4", "text": "useCallback"}
-            ],
-            "correctOptionId": "opt2"
+            "question": "Which hook is used for side effects in React?",
+            "options": ["useState", "useEffect", "useMemo", "useCallback"],
+            "correctAnswer": "useEffect"
         }'::jsonb),
        ('c5555555-5555-5555-5555-555555555555', 'cccccccc-cccc-cccc-cccc-cccccccccccc',
         '{
-            "text": "How do you pass data from parent to child component?",
-            "options": [
-                {"id": "opt1", "text": "Using state"},
-                {"id": "opt2", "text": "Using props"},
-                {"id": "opt3", "text": "Using context"},
-                {"id": "opt4", "text": "Using refs"}
-            ],
-            "correctOptionId": "opt2"
+            "question": "How do you pass data from parent to child component?",
+            "options": ["Using state", "Using props", "Using context", "Using refs"],
+            "correctAnswer": "Using props"
         }'::jsonb) ON CONFLICT DO NOTHING;
 
 -- Quiz 4: SQL Basics
@@ -287,58 +212,33 @@ VALUES ('dddddddd-dddd-dddd-dddd-dddddddddddd', 'SQL Basics',
 INSERT INTO quiz_schema.question (id, quiz_id, content)
 VALUES ('d1111111-1111-1111-1111-111111111111', 'dddddddd-dddd-dddd-dddd-dddddddddddd',
         '{
-            "text": "Which SQL clause is used to filter records?",
-            "options": [
-                {"id": "opt1", "text": "FILTER"},
-                {"id": "opt2", "text": "WHERE"},
-                {"id": "opt3", "text": "HAVING"},
-                {"id": "opt4", "text": "SELECT"}
-            ],
-            "correctOptionId": "opt2"
+            "question": "Which SQL clause is used to filter records?",
+            "options": ["FILTER", "WHERE", "HAVING", "SELECT"],
+            "correctAnswer": "WHERE"
         }'::jsonb),
        ('d2222222-2222-2222-2222-222222222222', 'dddddddd-dddd-dddd-dddd-dddddddddddd',
         '{
-            "text": "Which JOIN returns all records from both tables?",
-            "options": [
-                {"id": "opt1", "text": "INNER JOIN"},
-                {"id": "opt2", "text": "LEFT JOIN"},
-                {"id": "opt3", "text": "RIGHT JOIN"},
-                {"id": "opt4", "text": "FULL OUTER JOIN"}
-            ],
-            "correctOptionId": "opt4"
+            "question": "Which JOIN returns all records from both tables?",
+            "options": ["INNER JOIN", "LEFT JOIN", "RIGHT JOIN", "FULL OUTER JOIN"],
+            "correctAnswer": "FULL OUTER JOIN"
         }'::jsonb),
        ('d3333333-3333-3333-3333-333333333333', 'dddddddd-dddd-dddd-dddd-dddddddddddd',
         '{
-            "text": "Which SQL function is used to count rows?",
-            "options": [
-                {"id": "opt1", "text": "SUM()"},
-                {"id": "opt2", "text": "COUNT()"},
-                {"id": "opt3", "text": "TOTAL()"},
-                {"id": "opt4", "text": "NUM()"}
-            ],
-            "correctOptionId": "opt2"
+            "question": "Which SQL function is used to count rows?",
+            "options": ["SUM()", "COUNT()", "TOTAL()", "NUM()"],
+            "correctAnswer": "COUNT()"
         }'::jsonb),
        ('d4444444-4444-4444-4444-444444444444', 'dddddddd-dddd-dddd-dddd-dddddddddddd',
         '{
-            "text": "What does DISTINCT keyword do?",
-            "options": [
-                {"id": "opt1", "text": "Sorts the results"},
-                {"id": "opt2", "text": "Removes duplicate rows"},
-                {"id": "opt3", "text": "Filters null values"},
-                {"id": "opt4", "text": "Groups the results"}
-            ],
-            "correctOptionId": "opt2"
+            "question": "What does DISTINCT keyword do?",
+            "options": ["Sorts the results", "Removes duplicate rows", "Filters null values", "Groups the results"],
+            "correctAnswer": "Removes duplicate rows"
         }'::jsonb),
        ('d5555555-5555-5555-5555-555555555555', 'dddddddd-dddd-dddd-dddd-dddddddddddd',
         '{
-            "text": "Which clause is used with aggregate functions to filter groups?",
-            "options": [
-                {"id": "opt1", "text": "WHERE"},
-                {"id": "opt2", "text": "GROUP BY"},
-                {"id": "opt3", "text": "HAVING"},
-                {"id": "opt4", "text": "ORDER BY"}
-            ],
-            "correctOptionId": "opt3"
+            "question": "Which clause is used with aggregate functions to filter groups?",
+            "options": ["WHERE", "GROUP BY", "HAVING", "ORDER BY"],
+            "correctAnswer": "HAVING"
         }'::jsonb) ON CONFLICT DO NOTHING;
 
 -- =====================================================
